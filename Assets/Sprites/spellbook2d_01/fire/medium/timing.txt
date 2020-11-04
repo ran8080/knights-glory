@@ -1,0 +1,2 @@
+mediumFire (28FPS)
+	> Empty Frames: 0001 (0.03s), 0024-0025 (0.06s), 0042 (0.03s)

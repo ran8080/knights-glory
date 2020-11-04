@@ -1,0 +1,5 @@
+fireStrongBeginning (28FPS)
+	> Empty Frames: 0001-0004 (0.14s), 0029-0036 (0.25s);
+fireStrongRepeat (28FPS)
+	> As the name suggests, loop this animation as long as needed, on my sample I did it 3 times;
+fireStrongEnd (28FPS)

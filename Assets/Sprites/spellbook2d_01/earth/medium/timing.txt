@@ -1,0 +1,2 @@
+mediumEarth (28FPS)
+	> Empty Frames: 0001 (0.03s), 0043 (0.03s)

@@ -1,0 +1,5 @@
+windStrongBeginning (28FPS)
+	> Empty Frames: 0010 - 0013 (0.14s)
+windStrongRepeat (28FPS)
+	> As the name suggests, loop this animation as long as needed, on my sample I did it 2 times;
+windStrongEnd (28FPS)

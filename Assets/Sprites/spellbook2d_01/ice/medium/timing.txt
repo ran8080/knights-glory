@@ -1,0 +1,2 @@
+mediumIce (28FPS)
+	> Empty Frames: 0050 (0.03s)
