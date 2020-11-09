@@ -29,7 +29,19 @@ public class PlayerPrefsController : MonoBehaviour
 
     public static float GetMasterVolume()
     {
-        return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
+        var defaultVolume = 0.4f;
+        if (PlayerPrefs.HasKey(MASTER_VOLUME_KEY)) 
+        { 
+            defaultVolume = PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
+        }
+        else
+        {
+            OptionsController optionsController = FindObjectOfType < OptionsController >();
+            if (optionsController) {
+                defaultVolume = optionsController.defaultVolume;
+            }
+        }
+        return defaultVolume;
     }
 
     public static void SetDifficulty(int difficulty)

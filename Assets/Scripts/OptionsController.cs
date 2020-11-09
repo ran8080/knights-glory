@@ -8,7 +8,7 @@ public class OptionsController : MonoBehaviour
 
     [SerializeField] Slider volumeSlider;
     [SerializeField] Slider difficultySlider;
-    [SerializeField] float defaultVolume = 0.2f;
+    [SerializeField] public float defaultVolume = 0.2f;
     [SerializeField] [Range(1, 4)] int defaultDifficulty = 1;
 
     // Start is called before the first frame update
