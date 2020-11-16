@@ -8,6 +8,7 @@ public class DefenderButton : MonoBehaviour
 {
 
     [SerializeField] Defender defenderPrefab;
+    public GameObject glow;
 
     private void Start()
     {
@@ -28,9 +29,12 @@ public class DefenderButton : MonoBehaviour
         var buttons = FindObjectsOfType<DefenderButton>();
         foreach(DefenderButton button in buttons)
         {
-            button.GetComponent<SpriteRenderer>().color = new Color32(72, 72, 72, 255);
+            //button.GetComponent<SpriteRenderer>().color = new Color32(72, 72, 72, 255);
+            button.GetComponent<DefenderButton>().glow.gameObject.SetActive(false);
         }
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        //gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        glow.SetActive(true);
+        
         
         // Pass defender prefab to defender spawner
         FindObjectOfType<DefenderSpawner>().setSelectedDefender(defenderPrefab);

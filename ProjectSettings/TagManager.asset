@@ -56,6 +56,9 @@ TagManager:
   - name: Projectile
     uniqueID: 1724719077
     locked: 0
+  - name: Glow
+    uniqueID: 1649144153
+    locked: 0
   - name: Trees
     uniqueID: 2034601893
     locked: 0
