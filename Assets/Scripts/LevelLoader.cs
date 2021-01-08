@@ -43,8 +43,9 @@ public class LevelLoader : MonoBehaviour
     }
 
     public void ReloadCurrentLevel() {
+        CrossSceneVars.enableDialog = false;
         Time.timeScale = 1;
-        SceneManager.LoadScene(currentSceneIndex);
+        StartCoroutine(LoadLevel(currentSceneIndex));
     }
 
     public void LoadMainMenu() {
@@ -63,7 +64,7 @@ public class LevelLoader : MonoBehaviour
     public void LoadNextScene() {
         // Not checking scene index bounderies
         Debug.Log("Loading scene in index: " + currentSceneIndex + 1);
-        //SceneManager.LoadScene(currentSceneIndex + 1);
+        CrossSceneVars.enableDialog = true;
         StartCoroutine(LoadLevel(currentSceneIndex + 1));
     }
 

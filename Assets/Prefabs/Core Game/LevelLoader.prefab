@@ -166,6 +166,7 @@ MonoBehaviour:
   loadingScreenTimeInSeconds: 4
   transition: {fileID: 447883027}
   transitionTime: 0
+  currentWorldName: 
 --- !u!1 &7669359450757101496
 GameObject:
   m_ObjectHideFlags: 0

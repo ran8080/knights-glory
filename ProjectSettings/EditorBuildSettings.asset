@@ -31,7 +31,7 @@ EditorBuildSettings:
     guid: d238b294fddad43fd8c26bc7e9f76671
   - enabled: 1
     path: Assets/Scenes/Intro Screen - World 2.unity
-    guid: 8a7dae32386214d649772d18527e3eed
+    guid: 4165eb8449f4948209e6fba236f06d31
   - enabled: 1
     path: Assets/Scenes/World 2 - Level 1.unity
     guid: 86db62b8bb7e84be9818cebd30cceccc
@@ -47,6 +47,42 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World 2 - Level 5.unity
     guid: 9d84073c04d8648608cc8f6ce2b60f93
+  - enabled: 1
+    path: Assets/Scenes/Intro Screen - World 3.unity
+    guid: 8a7dae32386214d649772d18527e3eed
+  - enabled: 1
+    path: Assets/Scenes/World 3 - Level 1.unity
+    guid: c81ea1cd690a3430cb75f982509441ca
+  - enabled: 1
+    path: Assets/Scenes/World 3 - Level 2.unity
+    guid: dbbb9286302c8400fa0585f411d73aa8
+  - enabled: 1
+    path: Assets/Scenes/World 3 - Level 3.unity
+    guid: 6ea6c383de70646bd992461b524bf079
+  - enabled: 1
+    path: Assets/Scenes/World 3 - Level 4.unity
+    guid: 84f24a3e7ab4b45d8ba3182b28880604
+  - enabled: 1
+    path: Assets/Scenes/World 3 - Level 5.unity
+    guid: 5d644a4124844415aa84b02aa08785a1
+  - enabled: 1
+    path: Assets/Scenes/Intro Screen - World 4.unity
+    guid: 2c49243fbd8954b7bb32d30bf8021ddc
+  - enabled: 1
+    path: Assets/Scenes/World 4 - Level 1.unity
+    guid: 79701c13d799a457eb0e328ca87979a0
+  - enabled: 1
+    path: Assets/Scenes/World 4 - Level 2.unity
+    guid: b0ea50e6969e148518ab8ab119276563
+  - enabled: 1
+    path: Assets/Scenes/World 4 - Level 3.unity
+    guid: 52e7772ab1cb047c799f6c4e2dee15c4
+  - enabled: 1
+    path: Assets/Scenes/World 4 - Level 4.unity
+    guid: 7c5decac9de00423a8e9eeca113ab274
+  - enabled: 1
+    path: Assets/Scenes/World 4 - Level 5.unity
+    guid: 526b44267a6f447fab669eda2449c1da
   - enabled: 1
     path: Assets/Scenes/You Win.unity
     guid: f35a264f6fe1444d2b89e9d074114735

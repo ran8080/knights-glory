@@ -7,6 +7,9 @@ public class DefenderSpawner : MonoBehaviour
 {
     // States
     [SerializeField] Defender defender;
+    [SerializeField] AudioClip placeDefenderSFX;
+    [SerializeField] [Range(0f, 1f)] float placeDefenderSFXVolume = 0.4f;
+
     GameObject defenderParent;
 
     const string DEFENDER_PARENT_NAME = "Defenders";
@@ -37,6 +40,7 @@ public class DefenderSpawner : MonoBehaviour
 
     private void AttemptToPlaceDefenderAt(Vector2 gridPos) 
     {
+        if (!defender) { return; }
         var starDisplay = FindObjectOfType<StarDisplay>();
         int defenderCost = defender.GetStarCost();
         if (starDisplay.HaveEnoughStars(defenderCost))
@@ -89,6 +93,8 @@ public class DefenderSpawner : MonoBehaviour
     private void SpawnDefender(Vector2 roundedPos) 
     { 
         if (!defender) { return; }
+
+        AudioSource.PlayClipAtPoint(placeDefenderSFX, Camera.main.transform.position, placeDefenderSFXVolume);
         Defender newDefender = Instantiate(defender,
              roundedPos, Quaternion.identity) as Defender;
         newDefender.transform.parent = defenderParent.transform;

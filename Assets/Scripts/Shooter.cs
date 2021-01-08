@@ -54,8 +54,13 @@ public class Shooter : MonoBehaviour
             var isCloseEnough = 
                 (Mathf.Abs(spawnerYPlusOffset - transform.position.y) <= Mathf.Epsilon);
 
-            if (isCloseEnough) { myLaneSpawner = spawner; }
+            if (isCloseEnough) { 
+                myLaneSpawner = spawner;
+                Debug.Log("Set Lane Spawner " + myLaneSpawner.name + " For Shooter " + gameObject.name);
+                return;
+            }
         }
+        Debug.LogWarning("Couldn't Set A Lane Spawner For Shooter " + gameObject.name);
     }
 
     private bool IsAttackerInLane()
@@ -72,6 +77,7 @@ public class Shooter : MonoBehaviour
 
     public void fire() 
     {
+        Debug.Log("Firing!");
         var projectileObject = Instantiate(
             projectile, wepon.transform.position, Quaternion.identity) as GameObject;
         projectileObject.transform.parent = projectileParent.transform;

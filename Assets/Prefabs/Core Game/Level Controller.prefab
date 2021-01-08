@@ -48,7 +48,18 @@ MonoBehaviour:
   winLable: {fileID: 0}
   loseLable: {fileID: 0}
   LevelOptionsLable: {fileID: 0}
-  waitToLoad: 4
+  waitToLoadNextLevel: 4
+  waitToLoadDialog: 0.31
+  level: {fileID: 0}
+  menuSlides: []
+  slideTextComponent: {fileID: 0}
+  slideImageGameObject: {fileID: 0}
+  slidesLabel: {fileID: 0}
+  clickSFX: {fileID: 0}
+  clickSFXVolume: 0.5
+  buttonSets:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!82 &16506545
 AudioSource:
   m_ObjectHideFlags: 0
