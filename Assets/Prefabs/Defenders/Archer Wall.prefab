@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 1983170016761035214}
   - component: {fileID: 7629004375101704101}
   - component: {fileID: 59960695245017525}
-  - component: {fileID: 675012320121807628}
   - component: {fileID: 803091337}
+  - component: {fileID: 4602443882333651210}
   m_Layer: 0
   m_Name: Archer Wall
   m_TagString: Untagged
@@ -149,18 +149,6 @@ MonoBehaviour:
   hitTarget: {fileID: 0}
   durationOfExplosion: 1
   durationOfSmallExplosion: 0.7
---- !u!114 &675012320121807628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6080459144323868916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4003e1bbc5cc34ca79840d727e3e2e49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &803091337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +164,18 @@ MonoBehaviour:
   projectile: {fileID: 3123075860887978620, guid: acd9a0d67bb234a188e648ec48f7a198,
     type: 3}
   wepon: {fileID: 370392379}
+--- !u!114 &4602443882333651210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6080459144323868916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8314b35e85bf4946bcdde490535fcae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7728750489136099232
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Screen.unity
     guid: cfceeec6b976747eba17b73832ed86ff
   - enabled: 1
+    path: Assets/Scenes/Level Selection Screen.unity
+    guid: c1021abd019d44865ae79e7f966b78fb
+  - enabled: 1
     path: Assets/Scenes/Intro Screen - World 1.unity
     guid: 895b8f863d2304cee98230402eb07fa9
   - enabled: 1

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: World 2 - Level 3
   m_EditorClassIdentifier: 
   worldName: The Desert
+  worldNumber: 2
   levelNumber: 8

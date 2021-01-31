@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Castle : MonoBehaviour
 {
-    private void OnTriggerStay2D(Collider2D otherCollider)
+    // Start is called before the first frame update
+    void Start()
     {
-        Attacker attacker = otherCollider.GetComponent<Attacker>();
-        //if (attacker)
-        //{
-        //    // TODO Add some sort of animation
-        //    Debug.Log("Touched the castle");
-        //}
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

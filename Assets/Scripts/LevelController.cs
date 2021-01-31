@@ -88,7 +88,6 @@ public class LevelController : MonoBehaviour
     private IEnumerator HandleWinCondition()
     {
         winLable.SetActive(true);
-        //Time.timeScale = 0;  // Set game speed to 0 to prevent weird stuff from happaning
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(waitToLoadNextLevel);
         FindObjectOfType<LevelLoader>().LoadNextScene();

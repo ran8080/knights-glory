@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: World 1 - Level 5
   m_EditorClassIdentifier: 
   worldName: The Dungen
+  worldNumber: 1
   levelNumber: 5

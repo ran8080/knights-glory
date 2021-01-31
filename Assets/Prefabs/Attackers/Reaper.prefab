@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3563482667030167045}
   - component: {fileID: 3563482667030167044}
   - component: {fileID: 3563482667030167047}
-  - component: {fileID: 7687807104788173469}
+  - component: {fileID: -6734103802483991469}
   m_Layer: 0
   m_Name: Reaper
   m_TagString: Enemy
@@ -162,7 +162,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7687807104788173469
+--- !u!114 &-6734103802483991469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3563482667030167043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02c9a9f45f00246c6be0c42c8c54d7d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6451ec94f24dd43b5961d03777095aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3563482667819935281

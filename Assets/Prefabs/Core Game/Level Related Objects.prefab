@@ -122,11 +122,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pop-Up Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4470461590266979556, guid: 728af4e4531de40cfb0b820b77e32eed,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4556463848779950116, guid: 728af4e4531de40cfb0b820b77e32eed,
         type: 3}
       propertyPath: m_LocalScale.x

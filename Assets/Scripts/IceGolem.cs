@@ -12,7 +12,7 @@ public class IceGolem : MonoBehaviour
             GetComponent<Animator>().SetTrigger("jumpTrigger");
         }
         else if (otherObject.GetComponent<Defender>())
-        { 
+        {
             GetComponent<Attacker>().Attack(otherObject);
         }
     }

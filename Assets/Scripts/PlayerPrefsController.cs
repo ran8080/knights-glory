@@ -6,6 +6,7 @@ public class PlayerPrefsController : MonoBehaviour
 {
     const string MASTER_VOLUME_KEY = "master volume";
     const string DIFFICULTY_KEY = "difficulty";
+    const string LEVEL_AT_KEY = "levelAt";
 
     // Values bounderies
     const float MIN_VOLUME = 0;
@@ -60,5 +61,20 @@ public class PlayerPrefsController : MonoBehaviour
     public static int GetDifficulty()
     {
         return PlayerPrefs.GetInt(DIFFICULTY_KEY);
+    }
+
+    public static int GetLevelAt(int currentLevelIndex)
+    { 
+        return PlayerPrefs.GetInt(LEVEL_AT_KEY, currentLevelIndex);
+    }
+
+    public static void SetLevelAt(int currentLevelIndex)
+    { 
+        PlayerPrefs.SetInt(LEVEL_AT_KEY, currentLevelIndex);
+    }
+
+    public static void DeleteLevelAt()
+    {
+        PlayerPrefs.DeleteKey(LEVEL_AT_KEY);
     }
 }

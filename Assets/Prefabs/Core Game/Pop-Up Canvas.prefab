@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8020017512234201724
 RectTransform:
   m_ObjectHideFlags: 0
@@ -978,9 +978,8 @@ MonoBehaviour:
     Don''t let monsters pass your defends
     lines!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 37ebf37e8913f4558820fd26a70709a6, type: 2}
-  m_sharedMaterial: {fileID: -8373730167132469369, guid: 37ebf37e8913f4558820fd26a70709a6,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

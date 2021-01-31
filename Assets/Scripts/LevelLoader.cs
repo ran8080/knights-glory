@@ -8,11 +8,9 @@ public class LevelLoader : MonoBehaviour
 
     [SerializeField] float loadingScreenTimeInSeconds = 4f;
     [SerializeField] Animator transition;
-    [SerializeField] float transitionTime;
-    [SerializeField] string currentWorldName = "";
-    
+    [SerializeField] float transitionTime; [SerializeField] string currentWorldName = ""; 
     // States
-    int currentSceneIndex;
+    [SerializeField] int currentSceneIndex;
     const string SPLASH_SCREEN_TAG = "splash screen";
     const string WORLD_INTRO_TAG = "world intro";
 
@@ -57,15 +55,30 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene("Options Screen");
     }
 
+    public void LoadLevelSelectionScreen() {
+        SceneManager.LoadScene("Level Selection Screen");
+    }
+
     public void LoadLoadingScene() { 
         SceneManager.LoadScene(0);
     }
 
+    public void LoadLevelAtIndex(int levelIndex) {
+        StartCoroutine(LoadLevel(levelIndex));
+    }
+
     public void LoadNextScene() {
         // Not checking scene index bounderies
-        Debug.Log("Loading scene in index: " + currentSceneIndex + 1);
+        var nextLevelIndex = currentSceneIndex + 1;
+        Debug.Log("Loading scene in index: " + nextLevelIndex);
         CrossSceneVars.enableDialog = true;
-        StartCoroutine(LoadLevel(currentSceneIndex + 1));
+        UnlockNextLevelInPrefs(nextLevelIndex);
+        StartCoroutine(LoadLevel(nextLevelIndex));
+    }
+
+    public void DeleteLevelAtAndLoadNextScene() {
+        PlayerPrefsController.DeleteLevelAt();
+        LoadNextScene();
     }
 
     IEnumerator LoadLevel(int levelIndex)
@@ -80,5 +93,17 @@ public class LevelLoader : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void UnlockNextLevelInPrefs(int nextLevelIndex) 
+    {
+        Debug.Log(string.Format("Current level scene {0}, next level scene {1}",
+            currentSceneIndex, nextLevelIndex));
+        // Update levelAt only if next level is bigger then current levelAt value 
+        if (PlayerPrefsController.GetLevelAt(CrossSceneVars.selectionLevelBuildIndex) < nextLevelIndex) {
+            Debug.Log(string.Format("PlayerPref.GetLevelAt = {0} < currentSceneIndex = {1}", CrossSceneVars.selectionLevelBuildIndex, currentSceneIndex));
+            Debug.Log(string.Format("Setting Level At to {0}", nextLevelIndex));
+            PlayerPrefsController.SetLevelAt(nextLevelIndex);
+        }
     }
 }

@@ -1400,7 +1400,6 @@ GameObject:
   - component: {fileID: 5639023042899835180}
   - component: {fileID: 379630224305156357}
   - component: {fileID: 646140884553010731}
-  - component: {fileID: 3154677232401322311}
   m_Layer: 5
   m_Name: Lane Blocker (1)
   m_TagString: Untagged
@@ -1463,18 +1462,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3154677232401322311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5083260657741727280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66c3f4a8068cc4738973daee09b841ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7209643354435453972
 GameObject:
   m_ObjectHideFlags: 0

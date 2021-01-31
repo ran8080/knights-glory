@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: World 3 - Level 4
   m_EditorClassIdentifier: 
   worldName: The Swamp
+  worldNumber: 3
   levelNumber: 14

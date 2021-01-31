@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: World 4 - Level 2
   m_EditorClassIdentifier: 
   worldName: Hell
+  worldNumber: 4
   levelNumber: 17
