@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfb650032016432591318ec1e1ccd52, type: 3}
   m_Name: Archer toolbar 2
   m_EditorClassIdentifier: 
-  slideText: Use the toolbar button to navidate back and forth between Knights and
+  slideText: Use the toolbar button to navigate back and forth between Knights and
     Archers toolbars.
   slideSprite: {fileID: 21300000, guid: 820d2f852643f42bab1a5bb5246f5538, type: 3}

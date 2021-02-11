@@ -551,6 +551,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 424918989254295471, guid: c39bac5bf479e44009ac059def680e00,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87e691b663fea4167b280c8d3eec9ae3,
+        type: 3}
     - target: {fileID: 424918989753478923, guid: c39bac5bf479e44009ac059def680e00,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -787,6 +793,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2196851204535004063, guid: 8537d55b2dfa64f66b377bf283a7bef4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5978234413424518017, guid: 8537d55b2dfa64f66b377bf283a7bef4,
         type: 3}
       propertyPath: m_LocalPosition.x

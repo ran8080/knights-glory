@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfb650032016432591318ec1e1ccd52, type: 3}
   m_Name: Tutorial - Slide 3
   m_EditorClassIdentifier: 
-  slideText: This are your stars. Use them to buy new Knights to your army.
+  slideText: Those are your stars. Use them to buy new Knights to your army.
   slideSprite: {fileID: 21300000, guid: e352a897aa20248dfaba7fb934e0e9c8, type: 3}

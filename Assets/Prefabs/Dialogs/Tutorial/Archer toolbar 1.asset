@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfb650032016432591318ec1e1ccd52, type: 3}
   m_Name: Archer toolbar 1
   m_EditorClassIdentifier: 
-  slideText: New Heroes Unlocked! The Archers Toolbar!
+  slideText: w Heroes Unlocked! The Archers Toolbar!r!
   slideSprite: {fileID: 21300000, guid: 7ff77e3a7dffb415892b98e1337866a1, type: 3}

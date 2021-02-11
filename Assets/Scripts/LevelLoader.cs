@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
@@ -8,7 +9,10 @@ public class LevelLoader : MonoBehaviour
 
     [SerializeField] float loadingScreenTimeInSeconds = 4f;
     [SerializeField] Animator transition;
-    [SerializeField] float transitionTime; [SerializeField] string currentWorldName = ""; 
+    [SerializeField] float transitionTime; [SerializeField] string currentWorldName = "";
+    [SerializeField] GameObject loadingScreen;
+    [SerializeField] Slider slider;
+
     // States
     [SerializeField] int currentSceneIndex;
     const string SPLASH_SCREEN_TAG = "splash screen";
@@ -19,7 +23,7 @@ public class LevelLoader : MonoBehaviour
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (gameObject.tag == SPLASH_SCREEN_TAG)
         {
-            StartCoroutine(WaitSecondsAndLoadNext(loadingScreenTimeInSeconds));
+            StartLoadingScreen();
         }
         else if (gameObject.tag == WORLD_INTRO_TAG)
         {
@@ -30,50 +34,82 @@ public class LevelLoader : MonoBehaviour
             StartCoroutine(WaitSecondsAndLoadNext(loadingScreenTimeInSeconds));
         }
     }
-    
-    IEnumerator WaitSecondsAndLoadNext(float delayInSeconds) {
+
+    IEnumerator WaitSecondsAndLoadNext(float delayInSeconds) 
+    {
         yield return new WaitForSeconds(delayInSeconds);
         LoadNextScene();
     }
     
-    public void LoadYouWin() {
+    public void LoadYouWin() 
+    {
         SceneManager.LoadScene("You Win");
     }
 
-    public void ReloadCurrentLevel() {
+    public void ReloadCurrentLevel() 
+    {
         CrossSceneVars.enableDialog = false;
         Time.timeScale = 1;
         StartCoroutine(LoadLevel(currentSceneIndex));
     }
 
-    public void LoadMainMenu() {
+    public void LoadMainMenu() 
+    {
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 
-    public void LoadOptionsScreen() {
+    public void LoadOptionsScreen() 
+    {
         SceneManager.LoadScene("Options Screen");
     }
 
-    public void LoadLevelSelectionScreen() {
+    public void LoadLevelSelectionScreen() 
+    {
         SceneManager.LoadScene("Level Selection Screen");
     }
 
-    public void LoadLoadingScene() { 
+    public void LoadLoadingScene() 
+    { 
         SceneManager.LoadScene(0);
     }
 
-    public void LoadLevelAtIndex(int levelIndex) {
+    public void LoadLevelAtIndex(int levelIndex) 
+    {
         StartCoroutine(LoadLevel(levelIndex));
     }
 
-    public void LoadNextScene() {
+    public void LoadNextScene() 
+    {
         // Not checking scene index bounderies
         var nextLevelIndex = currentSceneIndex + 1;
         Debug.Log("Loading scene in index: " + nextLevelIndex);
         CrossSceneVars.enableDialog = true;
         UnlockNextLevelInPrefs(nextLevelIndex);
         StartCoroutine(LoadLevel(nextLevelIndex));
+    }
+
+    public void StartLoadingScreen() {
+        LoadNextAsync(loadingScreenTimeInSeconds);
+    }
+
+    public void LoadNextAsync(float delayInSeconds) 
+    {
+        var nextLevelIndex = currentSceneIndex + 1;
+        StartCoroutine(LoadAsync(nextLevelIndex, delayInSeconds));
+    }
+
+    IEnumerator LoadAsync(int sceneIndex, float delayInSeconds) 
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            slider.value = progress;
+            yield return null;
+        }
     }
 
     public void DeleteLevelAtAndLoadNextScene() {
@@ -83,12 +119,10 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadLevel(int levelIndex)
     {
-        // TODO here set level number text to currentLevel
         transition.SetTrigger("Start"); 
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex);
     }
-
 
     public void QuitGame()
     {
@@ -106,4 +140,5 @@ public class LevelLoader : MonoBehaviour
             PlayerPrefsController.SetLevelAt(nextLevelIndex);
         }
     }
+    
 }
