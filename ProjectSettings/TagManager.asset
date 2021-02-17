@@ -7,6 +7,7 @@ TagManager:
   - splash screen
   - Enemy
   - world intro
+  - world level button
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,7 @@ public class DefenderSpawner : MonoBehaviour
     // States
     [SerializeField] Defender defender;
     [SerializeField] AudioClip placeDefenderSFX;
-    [SerializeField] [Range(0f, 1f)] float placeDefenderSFXVolume = 0.4f;
+    [SerializeField] [Range(0f, 1f)] float placeDefenderSFXVolume = 0.2f;
 
     GameObject defenderParent;
 

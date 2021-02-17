@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelSelectionManager : MonoBehaviour {
-
+public class LevelSelectionManager : MonoBehaviour 
+{
+    // Config params 
     [SerializeField] LevelButton[] levelButtons;
 
     // stat
@@ -18,13 +19,8 @@ public class LevelSelectionManager : MonoBehaviour {
         int levelAt = PlayerPrefsController.GetLevelAt(CrossSceneVars.levelsIndexOffset); // 2
         for (int i = 0; i < levelButtons.Length; i++)
         {
-            Debug.Log("i = " + i);
             if (i + CrossSceneVars.selectionLevelBuildIndex >= levelAt)
             {
-                Debug.Log(string.Format("i ({0}) + selectionLevelBI ({1}) > levelAt {2}",
-                    i, CrossSceneVars.selectionLevelBuildIndex, levelAt));
-                Debug.Log(string.Format("Locking buttion in i ({0}), for: world {1} level {1}.",
-                    i, levelButtons[i].levelInfo.worldNumber, levelButtons[i].levelInfo.levelNumber));
                 levelButtons[i].LockLevelButton();
             }
         }
@@ -35,7 +31,7 @@ public class LevelSelectionManager : MonoBehaviour {
     }
 
     public void LoadChosenLevel() {
-        FindObjectOfType<LevelLoader>().LoadLevelAtIndex(chosenLevelIndex);
+        FindObjectOfType<LevelLoader>().LoadWithLoadingScreen(chosenLevelIndex);
     }
 
 }

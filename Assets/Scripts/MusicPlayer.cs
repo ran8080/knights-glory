@@ -19,12 +19,27 @@ public class MusicPlayer : MonoBehaviour
     }
 
     private IEnumerator PlayAudioClipsSequentionally() { 
-        while(true) { 
-            for(int i = 0; i < audioClips.Length; i++) {
+        while (true) {
+            ShuffleAudioClips();
+            for (int i = 0; i < audioClips.Length; i++) {
                 audioSource.clip = audioClips[i];
                 audioSource.Play();
-                yield return new WaitForSeconds(audioSource.clip.length);
+                while (audioSource.isPlaying)
+                { 
+                    yield return null;
+                }
             }
+        }
+    }
+
+    private void ShuffleAudioClips()
+    {
+        for (int i = 0; i < audioClips.Length - 1; i++)
+        {
+            int rnd = Random.Range(i, audioClips.Length);
+            var tempAudioClip = audioClips[rnd];
+            audioClips[rnd] = audioClips[i];
+            audioClips[i] = tempAudioClip;
         }
     }
 

@@ -151,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 2c211ea782ed84a6d83afc2375301b0a, type: 3}
     - target: {fileID: 274999893, guid: 96b9095adcae9432ab5dc8f8a89c1b80, type: 3}
       propertyPath: placeDefenderSFXVolume
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 188125842271704080, guid: 96b9095adcae9432ab5dc8f8a89c1b80,
         type: 3}

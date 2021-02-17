@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BaseCollider: MonoBehaviour
 {
-    
     // State variables
     LivesDisplay livesDisplay;
 

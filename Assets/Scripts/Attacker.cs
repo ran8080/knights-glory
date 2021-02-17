@@ -12,6 +12,8 @@ public class Attacker : MonoBehaviour
 
     [Range (0f, 5f)] [SerializeField] float currentSpeed = 1f;
     [Range (0f, 5f)] [SerializeField] float baseSpeed = 1f;
+
+    // States
     GameObject currentTarget;
 
     private void Awake()
@@ -36,14 +38,6 @@ public class Attacker : MonoBehaviour
     {
         transform.Translate(Vector2.left * Time.deltaTime * currentSpeed, Space.World);
         UpdateAnimationState();
-    }
-
-    private void UpdateAnimationState()
-    {
-        if (!currentTarget)
-        { 
-            GetComponent<Animator>().SetBool("isAttacking", false);
-        }
     }
 
     public float GetDefaultRotation() {
@@ -93,4 +87,13 @@ public class Attacker : MonoBehaviour
             health.DealDamage(damage);
         }
     }
+
+    private void UpdateAnimationState()
+    {
+        if (!currentTarget)
+        { 
+            GetComponent<Animator>().SetBool("isAttacking", false);
+        }
+    }
+
 }

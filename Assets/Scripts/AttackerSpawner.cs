@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AttackerSpawner : MonoBehaviour
 {
-
     // Config params 
     [SerializeField] Attacker[] attackers;
     [SerializeField] float minSpawnRate = 1f;
@@ -20,10 +19,25 @@ public class AttackerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnEnemiesEverySecondsRange(minSpawnRate, maxSpawnRate));
+        StartCoroutine(SpawnEnemiesEverySecondsRange(minSpawnRate, maxSpawnRate));
     }
     
-    private IEnumerator spawnEnemiesEverySecondsRange(float minSpawnRate, float maxSpawnRate) {
+    public int GetLiveAttackersInLane()
+    {
+        return liveAttackersInLane;
+    }
+
+    public float GetSpwanerOffsetOnGrid()
+    {
+        return spwanerOffsetOnGrid;
+    }
+
+    public void StopSpawning()
+    {
+        spawn = false;
+    }
+
+    private IEnumerator SpawnEnemiesEverySecondsRange(float minSpawnRate, float maxSpawnRate) {
         while (spawn) { 
             yield return new WaitForSeconds(Random.Range(minSpawnRate, maxSpawnRate));
             SpawnAttacker();
@@ -45,18 +59,4 @@ public class AttackerSpawner : MonoBehaviour
         newAttacker.transform.parent = transform;
     }
 
-    public int GetLiveAttackersInLane()
-    {
-        return liveAttackersInLane;
-    }
-
-    public float GetSpwanerOffsetOnGrid()
-    {
-        return spwanerOffsetOnGrid;
-    }
-
-    public void StopSpawning()
-    {
-        spawn = false;
-    }
 }

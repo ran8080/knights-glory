@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422b3cc3c89e946f087f6137d1e2a980, type: 3}
   m_Name: Intro World 2
   m_EditorClassIdentifier: 
-  worldName: The Desert
+  worldName: Sandy Mountains
   worldNumber: 2
   levelNumber: 5

@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-
     [SerializeField] float loadingScreenTimeInSeconds = 4f;
     [SerializeField] Animator transition;
-    [SerializeField] float transitionTime; [SerializeField] string currentWorldName = "";
+    [SerializeField] float transitionTime;
+    [SerializeField] string currentWorldName = "";
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider slider;
 
@@ -23,11 +23,10 @@ public class LevelLoader : MonoBehaviour
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (gameObject.tag == SPLASH_SCREEN_TAG)
         {
-            StartLoadingScreen();
+            StartCoroutine(WaitSecondsAndLoadNext(loadingScreenTimeInSeconds));
         }
         else if (gameObject.tag == WORLD_INTRO_TAG)
         {
-            // TODO set currentWorldText
             if (currentWorldName.Length > 0) {
                 Debug.Log("set world name to " + currentWorldName);
             }
@@ -89,17 +88,17 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(nextLevelIndex));
     }
 
-    public void StartLoadingScreen() {
-        LoadNextAsync(loadingScreenTimeInSeconds);
+    public void LoadWithLoadingScreen(int sceneIndex) {
+        StartCoroutine(LoadAsyncWithLoadingScreen(sceneIndex));
     }
 
-    public void LoadNextAsync(float delayInSeconds) 
+    public void LoadNextAsyncWithLoadingScreen() 
     {
         var nextLevelIndex = currentSceneIndex + 1;
-        StartCoroutine(LoadAsync(nextLevelIndex, delayInSeconds));
+        StartCoroutine(LoadAsyncWithLoadingScreen(nextLevelIndex));
     }
 
-    IEnumerator LoadAsync(int sceneIndex, float delayInSeconds) 
+    IEnumerator LoadAsyncWithLoadingScreen(int sceneIndex) 
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         loadingScreen.SetActive(true);

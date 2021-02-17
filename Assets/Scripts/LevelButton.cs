@@ -13,6 +13,9 @@ public class LevelButton: MonoBehaviour
     // Stats
     protected bool isLocked = false;
 
+    // Constants
+    const string WORLD_LEVEL_BUTTON_TAG = "world level button";
+
     // Start is called before the first frame update
     void Start()
     {
