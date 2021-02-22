@@ -20,7 +20,6 @@ public class LevelController : MonoBehaviour
 
     [SerializeField] AudioClip clickSFX;
     [SerializeField] [Range(0f, 1f)] float clickSFXVolume = 0.5f;
-
     [SerializeField] GameObject[] buttonSets;
        
     // States 
@@ -146,7 +145,7 @@ public class LevelController : MonoBehaviour
         winLable.SetActive(true);
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(waitToLoadNextLevel);
-        FindObjectOfType<LevelLoader>().LoadNextScene();
+        FindObjectOfType<LevelLoader>().LoadNextSceneWithAds();
     }
 
     private IEnumerator WaitAndStartDialog() 

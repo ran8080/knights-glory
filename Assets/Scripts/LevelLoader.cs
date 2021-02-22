@@ -78,6 +78,15 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(levelIndex));
     }
 
+    public void LoadNextSceneWithAds() {
+        var adsManager = FindObjectOfType<AdsManager>();
+        if (adsManager) {
+            Debug.Log("Attempting to display ads with random factor...");
+            adsManager.DisplayAdWithRandomFactor();
+        }
+        LoadNextScene();
+    }
+
     public void LoadNextScene() 
     {
         // Not checking scene index bounderies
